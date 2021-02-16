@@ -14,7 +14,7 @@ raw_intensities_sheet2.txt
 For futher processing, the backslash should be removed, and the first three
 headers are also not needed at this point:
 
-        cut -f4- raw_intensities_sheet1.txt > techrep_sheet1.txt
+	cut -f4- raw_intensities_sheet1.txt > techrep_sheet1.txt
 	sed 's/ \/ /_/g' techrep_sheet1.txt > temp
 	mv temp techrep_sheet1.txt```
 
