@@ -2,7 +2,7 @@ Guide through the analysis performed on the data obtained from our untargeted me
 
 Raw data = bee_August2017_strain_specificity data.xls
 
-#Initial file conversions
+Initial file conversions
 
 Raw intensities data was saved from excel-sheet in tab-delimited format. The data is spread over two sheets, so there are two files:
 
@@ -12,7 +12,7 @@ raw_intensities_sheet2.txt
 For futher processing, the backslash should be removed, and the first three
 headers are also not needed at this point:
 
-                         cut -f4- raw_intensities_sheet1.txt > techrep_sheet1.txt
+        cut -f4- raw_intensities_sheet1.txt > techrep_sheet1.txt
 	sed 's/ \/ /_/g' techrep_sheet1.txt > temp
 	mv temp techrep_sheet1.txt```
 
@@ -21,13 +21,13 @@ headers are also not needed at this point:
 	mv temp techrep_sheet2.txt
 
 
-#Calculating mean ion intensity for technical replicates, order the data
+Calculating mean ion intensity for technical replicates, order the data
 
 This was done using the perl script parse_intensities.pl.
 
 Usage:
 
-		perl parse_intensities.pl raw_intensities_sheet1.txt raw_intensities_sheet2.txt > mean_intensities.txt
+	perl parse_intensities.pl raw_intensities_sheet1.txt raw_intensities_sheet2.txt > mean_intensities.txt
 
 From here we started to process the data using the R script = metabolomics_untargeted.R
 
@@ -62,10 +62,3 @@ We combined these files into the table all_log2FC.xlsx and used them to produce 
 We selected the ions that significantly changed in intensity (p<0.01) between the two time-points in at least one strain with log2FC values <=-1 or >=1 and we visualised them using dotplots.
 
 Finally we also used the log2FC values to plot a PCA. 
-
-
-
-
-
-
-
